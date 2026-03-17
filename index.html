@@ -1,0 +1,325 @@
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Skip to main content link for screen readers */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #2c5f7c;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 100;
+            border-radius: 0 0 4px 0;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Enhanced focus indicators for keyboard navigation */
+        a:focus, button:focus {
+            outline: 3px solid #4a8db5;
+            outline-offset: 2px;
+        }
+        
+        .seagate-beach-club-page {
+            background-color: #f8f9fa;
+        }
+        
+        .seagate-beach-club-page .header {
+            background: linear-gradient(135deg, #2c5f7c 0%, #4a8db5 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .seagate-beach-club-page .header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+        
+        .seagate-beach-club-page .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .seagate-beach-club-page .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .seagate-beach-club-page .intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .seagate-beach-club-page .intro h2 {
+            color: #2c5f7c;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+        
+        .seagate-beach-club-page .intro p {
+            font-size: 1.1em;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .seagate-beach-club-page .offerings {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .seagate-beach-club-page .offering-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .seagate-beach-club-page .offering-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        
+        .seagate-beach-club-page .offering-header {
+            background: linear-gradient(135deg, #2c5f7c 0%, #4a8db5 100%);
+            color: white;
+            padding: 30px 25px;
+            text-align: center;
+        }
+        
+        .seagate-beach-club-page .offering-header h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+        
+        .seagate-beach-club-page .offering-header .subtitle {
+            font-size: 0.95em;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .seagate-beach-club-page .offering-body {
+            padding: 30px 25px;
+        }
+        
+        .seagate-beach-club-page .offering-body ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .seagate-beach-club-page .offering-body li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+        }
+        
+        .offering-body li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4a8db5;
+            font-weight: bold;
+        }
+        
+        .price {
+            text-align: center;
+            margin: 25px 0;
+            padding: 20px;
+            background: #f0f7fb;
+            border-radius: 6px;
+        }
+        
+        .price .amount {
+            font-size: 2em;
+            color: #2c5f7c;
+            font-weight: bold;
+        }
+        
+        .price .period {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 15px 30px;
+            background: #2c5f7c;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: #1e4359;
+        }
+        
+        .footer-note {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .footer-note h3 {
+            color: #2c5f7c;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            font-weight: normal;
+        }
+        
+        .footer-note p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .footer-note a {
+            color: #4a8db5;
+            text-decoration: none;
+            border-bottom: 1px solid #4a8db5;
+        }
+        
+        .footer-note a:hover {
+            color: #2c5f7c;
+            border-bottom-color: #2c5f7c;
+        }
+        
+        @media (max-width: 992px) {
+            .seagate-beach-club-page .offerings {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .offerings {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+<!-- Skip to main content link for accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="seagate-beach-club-page">
+    <div class="header" role="banner">
+        <h1>Sea Gate Beach Club Memberships</h1>
+        <p>Reserve your slice of paradise at Brooklyn's only private waterfront</p>
+    </div>
+    
+    <div class="container">
+        <div class="intro" id="main-content">
+            <h2>2026 Spring Sale</h2>
+            <p style="font-style: italic; color: #4a8db5;">Enjoy an expansive private beach, take a dip in our beachside pool, play tennis, wine and dine at the bar and grill.</p>
+            <p style="margin-top: 20px;">Choose from our cabanas, cabanettes, or lockers.</p>
+        </div>
+        
+        <div class="offerings" role="region" aria-label="Membership Options">
+            <!-- Cabanas -->
+            <article class="offering-card">
+                <div class="offering-header">
+                    <h3>Cabanas</h3>
+                </div>
+                <div class="offering-body">
+                    <h4 class="sr-only">Cabana Features</h4>
+                    <ul>
+                        <li>Full-size premium experience</li>
+                        <li>Up to 6 members</li>
+                    </ul>
+                    <div class="price" role="region" aria-label="Cabana pricing">
+                        <div class="amount" aria-label="Price: $4,999">$4,999</div>
+                        <div class="period">2026 Season / 6 Members</div>
+                    </div>
+                    <a href="https://connect.intuit.com/portal/app/CommerceNetwork/view/scs-v1-ad1df934455e457e932ac2a451c3f72f38627fa20bc14500a3b06e55922f9d8debbdccad2b454becb973b27b87baacfd?locale=EN_US" class="cta-button" aria-label="Reserve your cabana for $4,999">Reserve Your Cabana</a>
+                </div>
+            </article>
+            
+            <!-- Cabanettes -->
+            <article class="offering-card">
+                <div class="offering-header">
+                    <h3>Cabanettes</h3>
+                </div>
+                <div class="offering-body">
+                    <h4 class="sr-only">Cabanette Features</h4>
+                    <ul>
+                        <li>Cozy yet functional</li>
+                        <li>Up to 4 members</li>
+                    </ul>
+                    <div class="price" role="region" aria-label="Cabanette pricing">
+                        <div class="amount" aria-label="Price: $3,400">$3,400</div>
+                        <div class="period">2026 Season / 4 Members</div>
+                    </div>
+                    <a href="https://connect.intuit.com/t/scs-v1-22afed0f01ec45da985461b190e62480310573141ad849b8972d69dbb7517f05f6f51a022c674138b93c86bdf6dffb6e?locale=EN_US&cta=saveandcopylink" class="cta-button" aria-label="Reserve your cabanette for $3,400">Reserve Your Cabanette</a>
+                </div>
+            </article>
+            
+            <!-- Lockers -->
+            <article class="offering-card">
+                <div class="offering-header">
+                    <h3>Beach Lockers</h3>
+                </div>
+                <div class="offering-body">
+                    <h4 class="sr-only">Beach Locker Features</h4>
+                    <ul>
+                        <li>Convenient storage</li>
+                        <li>1 member</li>
+                    </ul>
+                    <div class="price" role="region" aria-label="Beach locker pricing">
+                        <div class="amount" aria-label="Price: $700">$700</div>
+                        <div class="period">2026 Season / 1 Member</div>
+                    </div>
+                    <a href="https://connect.intuit.com/portal/app/CommerceNetwork/view/scs-v1-95f8671dc22b4de9b89a40661276745d856c008d77f144fd81fc5b7bdab2cadec83ae6e1d1f44613a5de1f140d3bc2ba?locale=EN_US" class="cta-button" aria-label="Reserve your beach locker for $700">Reserve Your Locker</a>
+                </div>
+            </article>
+        </div>
+        
+        <div style="text-align: center; margin: 50px auto; padding: 30px; background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); max-width: 600px;" role="region" aria-labelledby="application-heading">
+            <h3 id="application-heading" style="color: #2c5f7c; margin-bottom: 20px; font-size: 1.5em; font-weight: normal;">Ready to Join?</h3>
+            <p style="color: #666; margin-bottom: 25px;">Complete your membership application to get started.</p>
+            <a href="https://forms.gle/2et94TCnsFCv7Q1y6" class="cta-button" style="display: inline-block; width: auto; padding: 15px 40px;" aria-label="Complete membership application form">Complete Membership Application</a>
+        </div>
+        
+        <div class="footer-note" role="contentinfo">
+            <h3>Questions About Beach Club Membership?</h3>
+            <p>Contact the Sea Gate Association office at <a href="tel:718-449-4700">718-449-4700</a> or visit us at the office on Surf Avenue.</p>
+            <p style="margin-top: 15px; font-size: 0.95em; color: #888;">Sales are first-come, first-served and subject to availability.</p>
+        </div>
+    </div>
+</div>
